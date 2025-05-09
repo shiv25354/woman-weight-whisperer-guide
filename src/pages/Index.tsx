@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,6 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ShieldAlert, Ruler, ActivitySquare, Trophy, HelpCircle } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
+import AdBanner from '@/components/AdBanner';
 
 const Index = () => {
   return (
@@ -33,6 +33,11 @@ const Index = () => {
             </Button>
           </div>
         </section>
+        
+        {/* Leaderboard Banner after Hero Section */}
+        <div className="py-4 flex justify-center">
+          <AdBanner size="leaderboard" />
+        </div>
         
         {/* Problem Section */}
         <ContentSection id="problem" title="Why BMI Matters for Women's Health" className="bg-white">
@@ -66,6 +71,11 @@ const Index = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <BmiCalculator />
             </div>
+          </div>
+          
+          {/* Mobile Leaderboard Banner */}
+          <div className="mt-8 md:hidden flex justify-center">
+            <AdBanner size="mobile-leaderboard" />
           </div>
         </ContentSection>
         
@@ -101,6 +111,11 @@ const Index = () => {
             <div>
               <BmiTable />
             </div>
+          </div>
+
+          {/* Medium Rectangle Banner */}
+          <div className="mt-8 flex justify-center">
+            <AdBanner size="medium-rectangle" />
           </div>
 
           <div className="mt-12 bg-white p-6 rounded-lg border border-gray-200">
@@ -146,6 +161,11 @@ const Index = () => {
           </div>
         </ContentSection>
         
+        {/* Wide Skyscraper Banner (side ad) for desktop */}
+        <div className="hidden lg:block fixed right-0 top-1/4 z-10">
+          <AdBanner size="wide-skyscraper" />
+        </div>
+        
         {/* Top Picks / Reviews Section */}
         <ContentSection id="top-picks" title="Recommended Resources" className="bg-white">
           <p className="text-lg text-gray-700 mb-8">
@@ -177,62 +197,76 @@ const Index = () => {
               link="#nutrition-service"
             />
           </div>
+          
+          {/* Banner Ad */}
+          <div className="mt-10 flex justify-center">
+            <AdBanner size="banner" />
+          </div>
         </ContentSection>
         
         {/* FAQ Section */}
         <ContentSection id="faq" title="Frequently Asked Questions" className="bg-gray-50">
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg font-medium flex">
-                  <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
-                  <span>What is considered a healthy BMI range for women?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-700">
-                  A healthy BMI range for adults, including women, is generally considered to be between 18.5 and 24.9. However, it's important to remember that BMI is just one indicator of health and should be considered alongside other factors.
-                </AccordionContent>
-              </AccordionItem>
-              
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-lg font-medium flex">
-                  <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
-                  <span>Does the ideal BMI for women change with age?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-700">
-                  BMI ranges themselves do not typically change with age in standard classifications for adults 20 and older. However, body composition (muscle, fat, bone) changes with age and menopause, which affects how accurate BMI is as an indicator of health or body fat percentage. Therefore, while the BMI number is calculated the same way, its interpretation in older women or postmenopausal women requires considering these age-related changes.
-                </AccordionContent>
-              </AccordionItem>
-              
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-lg font-medium flex">
-                  <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
-                  <span>How accurate is BMI for assessing a woman's health?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-700">
-                  BMI is a useful screening tool and correlates with body fat at a population level, but it is not always accurate for individuals. It doesn't distinguish between fat, muscle, and bone, and its accuracy can be limited by factors like muscle mass, age, body fat distribution, and menopausal status.
-                </AccordionContent>
-              </AccordionItem>
-              
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="text-lg font-medium flex">
-                  <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
-                  <span>How does pregnancy affect BMI and weight recommendations?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-700">
-                  Weight gain recommendations during a single pregnancy are based on your pre-pregnancy BMI. It's important to consult with a healthcare professional to determine healthy weight gain goals during pregnancy based on your specific needs.
-                </AccordionContent>
-              </AccordionItem>
-              
-              <AccordionItem value="item-5">
-                <AccordionTrigger className="text-lg font-medium flex">
-                  <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
-                  <span>What are some alternatives to BMI for women?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-700">
-                  Alternative methods include waist circumference measurement (should be less than 35 inches or 88 cm for women), waist-to-hip ratio (ideally 0.85 or below for women), body fat percentage testing, and more advanced clinical methods like DXA scans. These can provide a more comprehensive picture of health than BMI alone.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <div className="max-w-3xl">
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger className="text-lg font-medium flex">
+                      <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
+                      <span>What is considered a healthy BMI range for women?</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-700">
+                      A healthy BMI range for adults, including women, is generally considered to be between 18.5 and 24.9. However, it's important to remember that BMI is just one indicator of health and should be considered alongside other factors.
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="item-2">
+                    <AccordionTrigger className="text-lg font-medium flex">
+                      <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
+                      <span>Does the ideal BMI for women change with age?</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-700">
+                      BMI ranges themselves do not typically change with age in standard classifications for adults 20 and older. However, body composition (muscle, fat, bone) changes with age and menopause, which affects how accurate BMI is as an indicator of health or body fat percentage.
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="item-3">
+                    <AccordionTrigger className="text-lg font-medium flex">
+                      <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
+                      <span>How accurate is BMI for assessing a woman's health?</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-700">
+                      BMI is a useful screening tool and correlates with body fat at a population level, but it is not always accurate for individuals. It doesn't distinguish between fat, muscle, and bone, and its accuracy can be limited by factors like muscle mass, age, body fat distribution, and menopausal status.
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="item-4">
+                    <AccordionTrigger className="text-lg font-medium flex">
+                      <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
+                      <span>How does pregnancy affect BMI and weight recommendations?</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-700">
+                      Weight gain recommendations during a single pregnancy are based on your pre-pregnancy BMI. It's important to consult with a healthcare professional to determine healthy weight gain goals during pregnancy based on your specific needs.
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="item-5">
+                    <AccordionTrigger className="text-lg font-medium flex">
+                      <HelpCircle className="mr-2 text-bmi-purple flex-shrink-0" />
+                      <span>What are some alternatives to BMI for women?</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-700">
+                      Alternative methods include waist circumference measurement (should be less than 35 inches or 88 cm for women), waist-to-hip ratio (ideally 0.85 or below for women), body fat percentage testing, and more advanced clinical methods like DXA scans. These can provide a more comprehensive picture of health than BMI alone.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
+            </div>
+            
+            {/* Large Skyscraper Banner on the side */}
+            <div className="hidden lg:flex justify-center">
+              <AdBanner size="large-skyscraper" />
+            </div>
           </div>
           
           {/* Hidden FAQ Schema for SEO */}
@@ -286,6 +320,11 @@ const Index = () => {
           `}} />
         </ContentSection>
         
+        {/* Mobile Banner Ad for small screens */}
+        <div className="md:hidden flex justify-center py-4">
+          <AdBanner size="mobile-leaderboard" />
+        </div>
+        
         {/* Testimonial Section */}
         <ContentSection id="testimonials" title="What Women Are Saying" className="bg-white">
           <div className="grid md:grid-cols-3 gap-6">
@@ -321,6 +360,12 @@ const Index = () => {
                 </div>
               </div>
             </div>
+          </div>
+          
+          {/* Final Banner Ad */}
+          <div className="mt-10 flex justify-center">
+            <AdBanner size="leaderboard" className="hidden md:flex" />
+            <AdBanner size="medium-rectangle" className="md:hidden" />
           </div>
         </ContentSection>
       </main>
