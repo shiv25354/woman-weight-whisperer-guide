@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Mail, Phone, Facebook, Twitter, Instagram, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,9 +38,9 @@ const Footer = () => {
               <a href="#top-picks" className="text-gray-300 hover:text-white transition-colors">Resources</a>
               <a href="#faq" className="text-gray-300 hover:text-white transition-colors">FAQs</a>
               <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Testimonials</a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">Terms of Use</a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a>
+              <Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="text-gray-300 hover:text-white transition-colors">Terms of Use</Link>
+              <Link to="/medical-disclaimer" className="text-gray-300 hover:text-white transition-colors">Medical Disclaimer</Link>
             </div>
           </div>
 
@@ -65,6 +66,7 @@ const Footer = () => {
                   type="email" 
                   placeholder="Your email" 
                   className="px-4 py-2 text-gray-800 rounded-l-md w-full focus:outline-none" 
+                  aria-label="Email for newsletter"
                 />
                 <button className="bg-bmi-purple hover:bg-bmi-dark-purple px-4 py-2 rounded-r-md">
                   Subscribe
@@ -78,13 +80,13 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-6 mt-6">
           <div className="flex flex-wrap justify-center gap-6 mb-6">
             <div className="bg-white p-2 rounded-md flex items-center">
-              <img src="https://cdn.lovable.dev/placeholder.svg" alt="HIPAA Compliant" className="h-10" />
+              <img src="https://cdn.lovable.dev/placeholder.svg" alt="HIPAA Compliant" className="h-10" loading="lazy" />
             </div>
             <div className="bg-white p-2 rounded-md flex items-center">
-              <img src="https://cdn.lovable.dev/placeholder.svg" alt="SSL Secured" className="h-10" />
+              <img src="https://cdn.lovable.dev/placeholder.svg" alt="SSL Secured" className="h-10" loading="lazy" />
             </div>
             <div className="bg-white p-2 rounded-md flex items-center">
-              <img src="https://cdn.lovable.dev/placeholder.svg" alt="Medical Information Verified" className="h-10" />
+              <img src="https://cdn.lovable.dev/placeholder.svg" alt="Medical Information Verified" className="h-10" loading="lazy" />
             </div>
           </div>
         </div>
@@ -92,7 +94,7 @@ const Footer = () => {
         <div className="text-center text-gray-400 border-t border-gray-700 pt-6">
           <p>© {currentYear} Women's BMI Guide. For informational purposes only. Not a substitute for professional medical advice.</p>
           <p className="mt-1 text-sm flex items-center justify-center gap-1">
-            Made with <Heart size={14} className="text-red-500" /> for women's health
+            Made with <Heart size={14} className="text-red-500" aria-hidden="true" /> for women's health
           </p>
         </div>
       </div>

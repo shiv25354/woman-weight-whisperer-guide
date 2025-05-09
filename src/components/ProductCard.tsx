@@ -20,6 +20,7 @@ const ProductCard = ({ title, imagePath, pros, cons, link }: ProductCardProps) =
           src={imagePath}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          loading="lazy" // Add lazy loading for better page speed
         />
       </div>
       <CardHeader className="pb-2">
@@ -28,7 +29,7 @@ const ProductCard = ({ title, imagePath, pros, cons, link }: ProductCardProps) =
       <CardContent className="flex-grow">
         <div className="mb-4">
           <h4 className="font-medium text-green-600 flex items-center gap-1 mb-2">
-            <Check size={16} /> Pros
+            <Check size={16} aria-hidden="true" /> Pros
           </h4>
           <ul className="space-y-1 pl-6 list-disc text-sm">
             {pros.map((pro, index) => (
@@ -38,7 +39,7 @@ const ProductCard = ({ title, imagePath, pros, cons, link }: ProductCardProps) =
         </div>
         <div>
           <h4 className="font-medium text-red-600 flex items-center gap-1 mb-2">
-            <X size={16} /> Cons
+            <X size={16} aria-hidden="true" /> Cons
           </h4>
           <ul className="space-y-1 pl-6 list-disc text-sm">
             {cons.map((con, index) => (
@@ -49,7 +50,7 @@ const ProductCard = ({ title, imagePath, pros, cons, link }: ProductCardProps) =
       </CardContent>
       <CardFooter className="pt-2">
         <Button asChild className="w-full bg-bmi-purple hover:bg-bmi-dark-purple">
-          <a href={link}>Learn More</a>
+          <a href={link} aria-label={`Learn more about ${title}`}>Learn More</a>
         </Button>
       </CardFooter>
     </Card>
