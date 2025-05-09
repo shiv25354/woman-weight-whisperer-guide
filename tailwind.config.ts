@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				bmi: {
+					purple: '#9b87f5',
+					'light-purple': '#E5DEFF',
+					'dark-purple': '#7E69AB',
+					underweight: '#33C3F0',
+					normal: '#4ade80',
+					overweight: '#f97316',
+					obese: '#ef4444',
 				}
 			},
 			borderRadius: {
@@ -89,7 +99,11 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			},
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'serif': ['Georgia', 'serif'],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
