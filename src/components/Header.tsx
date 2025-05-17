@@ -7,7 +7,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  <meta name="google-site-verification" content="JvxbU_4O71EWwf3oqi_Vi1pBWMi0PESyu8WnFTw2XA0" />
   // Handle scroll event to add shadow when scrolled
   useEffect(() => {
     const handleScroll = () => {
