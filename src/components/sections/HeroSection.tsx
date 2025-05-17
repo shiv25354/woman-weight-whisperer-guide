@@ -23,7 +23,7 @@ const HeroSection = () => {
       </section>
       
       {/* Leaderboard Banner after Hero Section */}
-      <div className="py-4 flex justify-center">
+      <div className="py-4 flex justify-center w-full overflow-hidden">
         <AdBanner size="leaderboard" />
       </div>
     </>

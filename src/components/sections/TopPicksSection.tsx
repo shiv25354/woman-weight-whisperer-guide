@@ -38,7 +38,7 @@ const TopPicksSection = () => {
       </div>
       
       {/* Banner Ad */}
-      <div className="mt-10 flex justify-center">
+      <div className="mt-10 flex justify-center w-full overflow-hidden">
         <AdBanner size="banner" />
       </div>
     </ContentSection>

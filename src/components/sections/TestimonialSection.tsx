@@ -42,7 +42,7 @@ const TestimonialSection = () => {
       </div>
       
       {/* Final Banner Ad */}
-      <div className="mt-10 flex justify-center">
+      <div className="mt-10 flex justify-center w-full overflow-hidden">
         <AdBanner size="leaderboard" className="hidden md:flex" />
         <AdBanner size="medium-rectangle" className="md:hidden" />
       </div>
