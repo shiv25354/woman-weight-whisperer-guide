@@ -7,7 +7,6 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
 
-<meta name="google-site-verification" content="JvxbU_4O71EWwf3oqi_Vi1pBWMi0PESyu8WnFTw2XA0" />
 const BmiCalculator = () => {
   const [unit, setUnit] = useState<'metric' | 'imperial'>('metric');
   const [height, setHeight] = useState<string>('');
